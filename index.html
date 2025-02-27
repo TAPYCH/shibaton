@@ -38,6 +38,32 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
+    /* Кнопка "Купить" */
+    .buy-button, .cta-button {
+      background-color: #0066cc;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      margin-top: 20px;
+      display: inline-block;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .buy-button:hover, .cta-button:hover {
+      background-color: #004c99;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .buy-button {
+      font-size: 22px;
+      padding: 18px 35px;
+    }
+
     /* Секция с основными блоками */
     .main-content {
       display: flex;
@@ -68,55 +94,6 @@
     .info-box p {
       font-size: 18px;
       color: #555;
-    }
-
-    /* Блок с преимуществами */
-    .advantages {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
-
-    .advantage-box {
-      background-color: #fff;
-      padding: 30px;
-      width: 30%;
-      text-align: center;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .advantage-box:hover {
-      transform: translateY(-10px);
-    }
-
-    .advantage-box h4 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      color: #0066cc;
-    }
-
-    .advantage-box p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    /* Кнопка Присоединиться */
-    .cta-button {
-      background-color: #0066cc;
-      color: white;
-      font-size: 20px;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 50px;
-      margin-top: 30px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #004c99;
     }
 
     /* Дорожная карта */
@@ -172,11 +149,6 @@
       margin-top: 60px;
     }
 
-    .cta-button {
-      font-size: 22px;
-      padding: 15px 40px;
-    }
-
     /* Стили для мобильных устройств */
     @media (max-width: 768px) {
       .main-content {
@@ -190,59 +162,84 @@
         margin-bottom: 20px;
       }
 
-      .advantages {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .advantage-box {
-        width: 80%;
-        margin-bottom: 20px;
-      }
-
       .roadmap .steps {
         grid-template-columns: 1fr;
         width: 90%;
       }
+
+      .buy-button {
+        font-size: 18px;
+        padding: 12px 25px;
+      }
+
+      .cta-button {
+        font-size: 18px;
+        padding: 12px 30px;
+      }
     }
 
-    /* Для айфонов и других устройств */
     @media (max-width: 1024px) {
       .logo-container img {
-        width: 80vw;
+        width: 70vw;
         max-width: 500px;
         height: auto;
+      }
+
+      .buy-button {
+        font-size: 18px;
+        padding: 15px 25px;
       }
     }
 
     @media (max-width: 480px) {
       .logo-container img {
         width: 90vw;
-        max-width: 450px;
+        max-width: 400px;
       }
-      .cta-button {
-        font-size: 18px;
-        padding: 12px 25px;
+
+      .buy-button {
+        font-size: 16px;
+        padding: 12px 20px;
       }
     }
 
     @media (max-width: 375px) {
       .logo-container img {
         width: 90vw;
-        max-width: 400px;
+        max-width: 350px;
+      }
+
+      .buy-button {
+        font-size: 16px;
+        padding: 12px 20px;
       }
     }
 
-    /* Для Android устройств */
-    @media (max-width: 600px) {
-      .logo-container img {
-        width: 85vw;
-        height: auto;
+    /* Для экранов ПК и больших мониторов */
+    @media (min-width: 1280px) {
+      .main-content {
+        margin: 40px 10%;
       }
 
       .cta-button {
-        font-size: 18px;
-        padding: 12px 25px;
+        font-size: 22px;
+        padding: 15px 40px;
+      }
+
+      .buy-button {
+        font-size: 22px;
+        padding: 18px 35px;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .logo-container img {
+        width: 40vw;
+        max-width: 600px;
+      }
+
+      .main-content {
+        margin: 40px 15%;
       }
     }
   </style>
@@ -253,6 +250,8 @@
     <div class="logo-container">
       <img src="img/4f4f1181-c1a2-4fdf-9df0-486514f0a272.png" alt="ShibaTon Logo">
     </div>
+    <!-- Кнопка "Купить" -->
+    <a href="#" class="buy-button">Купить токен</a>
   </header>
 
   <section class="main-content">
@@ -266,32 +265,16 @@
     </div>
   </section>
 
-  <!-- Блок преимуществ -->
-  <section class="advantages">
-    <div class="advantage-box">
-      <h4>Гибкость</h4>
-      <p>ShibaTon адаптируется к текущим криптовалютным тенденциям и имеет возможность роста благодаря экосистеме TON и сильному бренду Shiba Inu.</p>
-    </div>
-    <div class="advantage-box">
-      <h4>Партнёрства</h4>
-      <p>Проект активно сотрудничает с ведущими игроками рынка криптовалют и строит стратегические альянсы для обеспечения стабильного роста.</p>
-    </div>
-    <div class="advantage-box">
-      <h4>Поддержка сообщества</h4>
-      <p>ShibaTon имеет сильное сообщество, поддерживающее проект. Мы активно развиваем маркетинговую стратегию и вовлекаем новых участников.</p>
-    </div>
-  </section>
-
   <section class="roadmap">
     <h2>Дорожная карта</h2>
     <div class="steps">
       <div class="step">
         <h4>28 февраля 18:00</h4>
-        <p>Запуск токена на платформе Блюм</p>
+        <p>Запуск токена на платформе Blum</p>
       </div>
       <div class="step">
         <h4>28 февраля 18:10</h4>
-        <p>Выход на биржу Декс</p>
+        <p>Выход на биржу Dex</p>
       </div>
       <div class="step">
         <h4>28 февраля 20:00</h4>
@@ -304,8 +287,13 @@
     </div>
   </section>
 
+  <!-- Кнопки каналов и чатов -->
   <section class="cta">
-    <a href="https://t.me/ShibaTon" class="cta-button">Присоединиться к Telegram</a>
+    <div>
+      <a href="https://t.me/ShibaTon_Channel" class="cta-button">Канал токена</a>
+      <a href="https://t.me/ShibaTon_Chat" class="cta-button">Чат токена</a>
+      <a href="https://t.me/ShibaTon_Creator" class="cta-button">Канал создателя</a>
+    </div>
   </section>
 </body>
 </html>

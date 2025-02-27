@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShibaTon - Официальный сайт</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #0066cc;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Место для логотипа */
+    .logo-container {
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    /* Анимация для заголовков */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Секция с основными блоками */
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px 10%;
+    }
+
+    .info-box {
+      background-color: #fff;
+      padding: 30px;
+      width: 45%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .info-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .info-box h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #0066cc;
+    }
+
+    .info-box p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Блок с преимуществами */
+    .advantages {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .advantage-box {
+      background-color: #fff;
+      padding: 30px;
+      width: 30%;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .advantage-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .advantage-box h4 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #0066cc;
+    }
+
+    .advantage-box p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Кнопка Присоединиться */
+    .cta-button {
+      background-color: #0066cc;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      margin-top: 30px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #004c99;
+    }
+
+    /* Дорожная карта */
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .roadmap h2 {
+      font-size: 36px;
+      color: #0066cc;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .roadmap .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      width: 80%;
+    }
+
+    .roadmap .step {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .roadmap .step:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .roadmap .step h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #0066cc;
+    }
+
+    .roadmap .step p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta-button {
+      font-size: 22px;
+      padding: 15px 40px;
+    }
+
+    /* Стили для мобильных устройств */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .info-box {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .advantages {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .advantage-box {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .roadmap .steps {
+        grid-template-columns: 1fr;
+        width: 90%;
+      }
+    }
+
+    /* Для айфонов и других устройств */
+    @media (max-width: 1024px) {
+      .logo-container img {
+        width: 80vw;
+        max-width: 500px;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-container img {
+        width: 90vw;
+        max-width: 450px;
+      }
+      .cta-button {
+        font-size: 18px;
+        padding: 12px 25px;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .logo-container img {
+        width: 90vw;
+        max-width: 400px;
+      }
+    }
+
+    /* Для Android устройств */
+    @media (max-width: 600px) {
+      .logo-container img {
+        width: 85vw;
+        height: auto;
+      }
+
+      .cta-button {
+        font-size: 18px;
+        padding: 12px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Место для логотипа -->
+    <div class="logo-container">
+      <img src="img/4f4f1181-c1a2-4fdf-9df0-486514f0a272.png" alt="ShibaTon Logo">
+    </div>
+  </header>
+
+  <section class="main-content">
+    <div class="info-box">
+      <h3>О токене</h3>
+      <p>ShibaTon — уникальный токен, который объединяет популярность Shiba Inu с передовой сетью TON. Это шанс для инвесторов.</p>
+    </div>
+    <div class="info-box">
+      <h3>Наши цели</h3>
+      <p>Мы нацелены на капитализацию в 5 миллионов долларов всего через неделю после запуска и продолжим расти с каждым днем.</p>
+    </div>
+  </section>
+
+  <!-- Блок преимуществ -->
+  <section class="advantages">
+    <div class="advantage-box">
+      <h4>Гибкость</h4>
+      <p>ShibaTon адаптируется к текущим криптовалютным тенденциям и имеет возможность роста благодаря экосистеме TON и сильному бренду Shiba Inu.</p>
+    </div>
+    <div class="advantage-box">
+      <h4>Партнёрства</h4>
+      <p>Проект активно сотрудничает с ведущими игроками рынка криптовалют и строит стратегические альянсы для обеспечения стабильного роста.</p>
+    </div>
+    <div class="advantage-box">
+      <h4>Поддержка сообщества</h4>
+      <p>ShibaTon имеет сильное сообщество, поддерживающее проект. Мы активно развиваем маркетинговую стратегию и вовлекаем новых участников.</p>
+    </div>
+  </section>
+
+  <section class="roadmap">
+    <h2>Дорожная карта</h2>
+    <div class="steps">
+      <div class="step">
+        <h4>28 февраля 18:00</h4>
+        <p>Запуск токена на платформе Блюм</p>
+      </div>
+      <div class="step">
+        <h4>28 февраля 18:10</h4>
+        <p>Выход на биржу Декс</p>
+      </div>
+      <div class="step">
+        <h4>28 февраля 20:00</h4>
+        <p>Конкурс для держателей токена</p>
+      </div>
+      <div class="step">
+        <h4>29 февраля</h4>
+        <p>Раздача мерча за блокировку токенов</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a href="https://t.me/ShibaTon" class="cta-button">Присоединиться к Telegram</a>
+  </section>
+</body>
+</html>
